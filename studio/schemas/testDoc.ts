@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity"
 
-const testDoc = defineType({
+export const testDocSchema = defineType({
   name: 'testdoc',
   type: 'document',
   fields: [
@@ -10,6 +10,5 @@ const testDoc = defineType({
       type: 'string',
     })
   ]
-})
+});
 
-export const schemaTypes = [testDoc];

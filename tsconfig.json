@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    // "skipLibCheck": true,
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -10,8 +11,12 @@
     "strict": true,
     "types": ["solid-start/env"],
     "baseUrl": "./",
+    
     "paths": {
       "~/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

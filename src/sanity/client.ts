@@ -1,8 +1,31 @@
-import CreateClient from '@sanity/client';
+interface SanityResponse<T> {
+  ms: number;
+  query: string;
+  result: T;
+}
 
-export const sanityClient = new CreateClient({
-  projectId: '5ss9d3s5',
-  dataset: 'production',
-  apiVersion: '2021-08-31',
-  useCdn: false
-});
+const projectId = '5ss9d3s5';
+const dataset = 'production';
+const apiVersion = '2021-08-31';
+
+const urlFor = (query: string): string => {
+  const baseUrl = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}`;
+  const searchParams = new URLSearchParams({query});
+  return `${baseUrl}?${searchParams.toString()}`;
+};
+
+export const groq = (strings: TemplateStringsArray, ...inserts: any[]): string => {
+  let result = strings[0];
+  for (let i = 1; i < strings.length; i++) {
+    result += strings[i - 1] + inserts[i];
+  }
+  return result;
+};
+
+export const sanityClient = {
+  fetch: async <T = unknown>(query: string): Promise<T> => {
+    const response = await fetch(urlFor(query));
+    const json: SanityResponse<T> = await response.json();
+    return json.result;
+  },
+} as const;

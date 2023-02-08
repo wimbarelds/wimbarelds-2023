@@ -4,9 +4,9 @@ interface SanityResponse<T> {
   result: T;
 }
 
-const projectId = '5ss9d3s5';
-const dataset = 'production';
-const apiVersion = '2021-08-31';
+export const projectId = '5ss9d3s5';
+export const dataset = 'production';
+export const apiVersion = '2021-08-31';
 
 const urlFor = (query: string): string => {
   const baseUrl = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}`;

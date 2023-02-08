@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: var(--clr-p-900);
+  padding: 10px;
+
+  [role=doc-subtitle] {
+    font-size: .7rem;
+    color: var(--clr-p-100);
+  }
+}

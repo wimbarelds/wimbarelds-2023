@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+
+  a {
+    color: var(--clr-white);
+    text-decoration: none;
+    font-size: .9rem;
+
+  }
+}
+
+.links {
+  display: flex;
+  gap: .75em;
+}
+
+.nav .active {
+  text-decoration: underline;
+}

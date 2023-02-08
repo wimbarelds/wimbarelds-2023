@@ -1,42 +1,82 @@
+:root {
+  /* Primary */
+  --clr-p-900: #153fab;
+  --clr-p-800: #145fca;
+  --clr-p-700: #1370dd;
+  --clr-p-600: #0e82f0;
+  --clr-p-500: #0091ff;
+  --clr-p-400: #35a1ff;
+  --clr-p-300: #5cb1ff;
+  --clr-p-200: #8cc7ff;
+  --clr-p-100: #badcff;
+  --clr-p-50: #e2f1ff;
+  /* Accent */
+  --clr-a-900: #d45700;
+  --clr-a-800: #dd6f00;
+  --clr-a-700: #e37e00;
+  --clr-a-600: #e98d00;
+  --clr-a-500: #ec9904;
+  --clr-a-400: #eea728;
+  --clr-a-300: #f0b74e;
+  --clr-a-200: #f4cb80;
+  --clr-a-100: #f8e0b2;
+  --clr-a-50: #fcf3e0;
+  /* monochrome */
+  --clr-black: #000;
+  --clr-white: #FFF;
+  --clr-mono-900: hsl(0 0% 10%);
+  --clr-mono-800: hsl(0 0% 20%);
+  --clr-mono-700: hsl(0 0% 30%);
+  --clr-mono-600: hsl(0 0% 40%);
+  --clr-mono-500: hsl(0 0% 50%);
+  --clr-mono-400: hsl(0 0% 60%);
+  --clr-mono-300: hsl(0 0% 70%);
+  --clr-mono-200: hsl(0 0% 80%);
+  --clr-mono-100: hsl(0 0% 90%);
+}
+
+html,
 body {
-  font-family: Gordita, Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #111;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--clr-mono-800);
   color: #FFF;
+  margin: 0;
 }
 
-a {
-  margin-right: 1rem;
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
 
-main {
-  text-align: center;
-  padding: 1em;
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.page-container {
   margin: 0 auto;
+  max-width: min(100%, 900px);
+  background-color: var(--clr-mono-900);
+  min-height: 100%;
 }
 
-h1 {
-  color: #9CF;
-  text-transform: uppercase;
-  font-size: 4rem;
-  font-weight: 100;
-  line-height: 1.1;
-  margin: 4rem auto;
-  max-width: 14rem;
+.no-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-p {
-  max-width: 14rem;
-  margin: 2rem auto;
-  line-height: 1.35;
-}
-
-@media (min-width: 480px) {
-  h1 {
-    max-width: none;
-  }
-
-  p {
-    max-width: none;
-  }
+h1, h2, h3, h4, h5, p {
+  margin: 0;
 }

@@ -1,0 +1,127 @@
+.section {
+  padding: .5em;
+  font-size: 20px;
+
+  h1, h2 {
+    border-left: solid #F90 .5em;
+    padding-left: .25em;
+    margin-bottom: .25em;
+  }
+}
+
+.section + .section {
+  margin-top: 1em;
+}
+
+.hero {
+  display: grid;
+  gap: 1em 2em;
+  grid-template-areas:
+    'website website'
+    'me img';
+  grid-template-columns: 1fr 180px;
+
+  img {
+    border-radius: 10px;
+    max-width: 150px;
+    max-height: 150px;
+    box-shadow: .25em .5em .5em #F90;
+    border: solid #000 4px;
+    margin-right: 1em;
+  }
+
+  .img {
+    grid-area: img;
+    padding-right: 1em;
+    display: flex;
+    align-items: center;
+  }
+
+  .website {
+    grid-area: website;
+  }
+
+  .me {
+    grid-area: me;
+  }
+}
+
+.about {
+  > div {
+    h3 {
+      position: relative;
+      padding-bottom: 5px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: .5em;
+        right: -1em;
+        bottom: 1px;
+        height: 3px;
+        background-color: #F90;
+      }
+    }
+    p + h3 {
+      margin-top: .75em;
+    }
+  }
+}
+
+.traits {
+}
+
+.traits_items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.trait {
+  display: grid;
+  grid-template-areas:
+    'img title'
+    'img text';
+  grid-template-columns:
+    100px 1fr;
+  gap: .25em .5em;
+
+  > span {
+    grid-area: img;
+    font-size: 100px;
+    text-shadow: 10px 15px 15px #FF9900CC;
+  }
+
+  > h3 {
+    grid-area: title;
+  }
+
+  > div {
+    grid-area: text;
+  }
+}
+
+.technologies {
+
+}
+
+.technologies_list {
+
+}
+
+.technologies_item {
+  display: inline-block;
+  border-radius: 100vmax;
+  padding: 4px 8px;
+  border: solid #666 1px;
+  background: #333;
+  color: #FFF;
+  margin: 4px;
+  cursor: default;
+  transition: box-shadow .2s ease-in-out;
+  box-shadow: 0px 0px 0px 0px #FF9900;
+
+  &:hover {
+    box-shadow: 0px 0px 4px 1px #FF9900;
+  }
+}

@@ -7,6 +7,8 @@ import {toHTML} from '@portabletext/to-html';
 import { dataset, projectId } from "~/sanity/client";
 import { ImageAsset } from "sanity";
 
+import styles from './index.module.scss'
+
 const builder = imageUrlBuilder({
   clientConfig: {
     dataset,
@@ -57,7 +59,6 @@ export default function Home() {
   const { data } = useRouteData<typeof routeData>();
   const home = createMemo((): HomeResolved | null => {
     const resolved = data();
-    console.log({resolved});
     if (!resolved) return null;
     const {title, hero, about, traits, technologies} = resolved;
     const result: HomeResolved = {
@@ -69,8 +70,8 @@ export default function Home() {
           text: <div innerHTML={toHTML(hero.website.text)} />,
         },
         me: {
-          title: hero.website.title,
-          text: <div innerHTML={toHTML(hero.website.text)} />,
+          title: hero.me.title,
+          text: <div innerHTML={toHTML(hero.me.text)} />,
         },
       },
       about: <div innerHTML={toHTML(about)} />,
@@ -90,37 +91,43 @@ export default function Home() {
   });
   return (
     <main>
-      <section class="hero">
-        <img src={home()?.hero.picture ?? ''} alt="" />
-        <div class="hero_me">
+      <section class={`${styles.section} ${styles.hero}`}>
+        <div class={styles.img}>
+          <img src={home()?.hero.picture ?? ''} alt="" />
+        </div>
+        <div class={styles.me}>
           <h1>{home()?.hero.me.title}</h1>
           {home()?.hero.me.text}
         </div>
-        <div class="hero_website">
+        <div class={styles.website}>
           <h1>{home()?.hero.website.title}</h1>
           {home()?.hero.website.text}
         </div>
       </section>
-      <section class="about">
+      <section class={`${styles.section} ${styles.about}`}>
         {home()?.about}
       </section>
-      <section class="traits">
+      <section class={`${styles.section} ${styles.traits}`}>
         <h2>{home()?.traits.title}</h2>
-        <For each={home()?.traits.items}>
-          {(trait) => (
-            <div class="trait">
-              {trait.symbol}
-              <h3>{trait.title}</h3>
-              {trait.text}
-            </div>
-          )}
-        </For>
-      </section>
-      <section class="technologies">
-        <h2>{home()?.technologies.title}</h2>
-          <For each={home()?.technologies.items}>
-            {tech => <span class="pill" style={{display: 'inline-block', 'border-radius': '100vmax', 'padding': '4px 8px', border: 'solid #666 1px', background: '#333', color: '#FFF', margin: '4px'}}>{tech}</span>}
+        <div class={styles.traits_items}>
+          <For each={home()?.traits.items}>
+            {(trait) => (
+              <div class={styles.trait}>
+                {trait.symbol}
+                <h3>{trait.title}</h3>
+                {trait.text}
+              </div>
+            )}
           </For>
+          </div>
+      </section>
+      <section class={`${styles.section} ${styles.technologies}`}>
+        <h2>{home()?.technologies.title}</h2>
+        <div class={styles.technologies_list}>
+          <For each={home()?.technologies.items}>
+            {tech => <span class={styles.technologies_item}>{tech}</span>}
+          </For>
+        </div>
       </section>
     </main>
   );

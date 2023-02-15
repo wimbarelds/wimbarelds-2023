@@ -17,7 +17,7 @@ const urlFor = (query: string): string => {
 export const groq = (strings: TemplateStringsArray, ...inserts: any[]): string => {
   let result = strings[0];
   for (let i = 1; i < strings.length; i++) {
-    result += strings[i - 1] + inserts[i];
+    result += inserts[i - 1] + strings[i];
   }
   return result;
 };

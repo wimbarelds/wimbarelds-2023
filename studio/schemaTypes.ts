@@ -1,6 +1,8 @@
 import type { SchemaTypeDefinition } from 'sanity';
 import { heroSchema } from './schemas/hero';
 import { pageSchema } from './schemas/page';
+import { penSchema } from './schemas/pen';
+import { portableTextSchema } from './schemas/portable-text';
 import { sectionSchema } from './schemas/section';
 import { techSchema } from './schemas/tech';
 import { testDocSchema } from "./schemas/testDoc";
@@ -15,6 +17,8 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   traitSchema,
   traitsSchema,
   sectionSchema,
+  penSchema,
+  portableTextSchema,
 ];
 
 export default schemaTypes;

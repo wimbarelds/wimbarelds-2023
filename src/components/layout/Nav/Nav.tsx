@@ -8,9 +8,9 @@ export default function Navigation(): JSXElement {
     <nav aria-labelledby="mainmenulabel" class={styles.nav}>
 	    <h2 id="mainmenulabel" class="sr-only">Main Menu</h2>
       <ul class={`no-list ${styles.links}`}>
-        <li><A activeClass={styles.active} href="/">Who am I?</A></li>
-        <li><A activeClass={styles.active} href="/tech">Tech</A></li>
-        <li><A activeClass={styles.active} href="/posts">Posts</A></li>
+        <li><A activeClass={styles.active} end={true} href="/">Who am I?</A></li>
+        <li><A activeClass={styles.active} href="/articles">Articles</A></li>
+        <li><A activeClass={styles.active} href="/pens">Pens</A></li>
       </ul>      
     </nav>
   )

@@ -6,7 +6,7 @@ export interface PenInterface {
   slug: string;
   thumbnail: Image;
   content: Array<
-    | {_key: string, _codepenId: string}
+    | {_key: string, codepenId: string}
     | {_key: string, _type: 'portableText', blocks: PortableTextBlock[]}
   >;
 }

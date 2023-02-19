@@ -1,15 +1,16 @@
-import { createResource, For, JSX } from "solid-js";
-import { RouteDataArgs, Title, useRouteData } from "solid-start";
-import { dataset, groq, projectId, sanityClient } from "~/sanity/client";
-import imageUrlBuilder from '@sanity/image-url';
+import { For, JSX } from "solid-js";
+import { createRouteData, RouteDataArgs, Title, useRouteData } from "solid-start";
+import { groq, sanityClient } from "~/sanity/client";
 import { PenInterface } from "./Pen";
-import { Image } from "sanity";
 import {toHTML} from '@portabletext/to-html';
+import { createServerData$ } from "solid-start/server";
+import Codepen from "~/components/Common/Codepen";
 
 const query = (slug: string) => groq`*
   [_type == "pen" && slug.current == "${slug}"]
   [0]
   {
+    _id,
     title,
     description,
     "slug": slug.current,
@@ -20,27 +21,23 @@ const query = (slug: string) => groq`*
 
 const getPen = async (slug: string) => await sanityClient.fetch<PenInterface>(query(slug));
 
-const builder = imageUrlBuilder({
-  clientConfig: {
-    dataset,
-    apiHost: 'https://cdn.sanity.io',
-    projectId,
-  }
-});
-const urlFor = (asset: Image) => builder.image(asset);
-
 export function routeData({ params }: RouteDataArgs) {
-  const [pen] = createResource(async () => {
-    return await getPen(params.pen);
+  return createRouteData(async (pen) => {
+    return await getPen(pen);
+  }, {
+    name: 'pen',
+    key: () => params.pen,
+    reconcileOptions: {
+      key: '_id',
+    },
   });
- 
-  return { pen };
 }
 
 export default function PenDetail(): JSX.Element {
-  const { pen } = useRouteData<typeof routeData>();
+  const pen = useRouteData<typeof routeData>();
   return (
-      pen() && (
+    <>
+      {pen() && (
         <>
           <Title>Codepen - ${pen()!.title}</Title>
           <h3>{pen()!.title}</h3>
@@ -51,23 +48,13 @@ export default function PenDetail(): JSX.Element {
                   return <div innerHTML={toHTML(item.blocks)} />
                 }
                 if ('codepenId' in item) {
-                  return (
-                    <iframe
-                      height="300"
-                      style={{width: '100%'}}
-                      src={`https://codepen.io/wimbarelds/embed/${item.codepenId}?default-tab=result`}
-                      allowfullscreen={true}
-                      allowtransparency="true"
-                      loading="lazy"
-                      frameborder="no"
-                      scrolling="no"
-                    />
-                  )
+                  return <Codepen id={item.codepenId} />
                 }
               }
             }
           </For>
         </>
-      )
+      )}
+    </>
   );
 }

@@ -6,6 +6,7 @@ import fetch, {
   Request,
   Response,
 } from 'node-fetch'
+import asyncStatic from './async-static';
 
 if (!globalThis.fetch) {
   Object.assign(globalThis, {fetch, Headers, Request, Response});
@@ -19,6 +20,9 @@ const getPens = async (): Promise<string[]> => {
 export default defineConfig({
   plugins: [solid({
     solid: { hydratable: true },
+    babel: (_, id) => ({
+      plugins: [["solid-styled/babel", { source: id }]],
+    }),
     prerenderRoutes: new Promise(async (resolve) => {
       resolve([
         '/articles/',
@@ -27,6 +31,6 @@ export default defineConfig({
         ...await getPens(),
       ]);
     }),
-    adapter: 'solid-start-static'
+    adapter: asyncStatic(),
   })],
 });

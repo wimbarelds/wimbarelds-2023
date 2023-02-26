@@ -1,109 +1,55 @@
-# Home
+Title:
+Hi, my name is
+Wim Barelds
 
-## Who is Wim Barelds?
+As a web developer I
+Learn
+Play
+Teach
+Build
 
-[tag: Professionally]
-I am a senior frontend software developer from the Netherlands (Groningen).
-My biggest strength is finding creative and elegant ways to solve problems.
-Sometimes that leads me to reinvent some wheels, and though sometimes that's
-not really needed, it does give an excellent understanding of how wheels work.
+I'm an experienced frontend web-developer who likes to build
+things, experiment with new techniques, and share the things
+I make, and the knowledge and passion I have for this.
 
-[tag: Personal]
-I also enjoy gaming; primarily single player story driven RPGs, and
-as a fallback for when I've completed those- games like minecraft or League
-of Legends. I have on occasion also built some simple games myself, when
-I do- I'll share them here.
+---
 
-And finally, I love climbing. I used to climb trees, but these days I do
-top-rope climbing and bouldering. I _can_ also do lead climbing, but I enjoy
-it less. I probably won't post any climbing content here though... Probably.
+About Me
 
-## Traits
+Hello! My name is Wim Barelds, I live in Groningen (Netherlands) and have been doing web development since my teenage years during the early 2000's- most of that time not professionally though.
 
-* Analytical
-I can generally analyze a problem quickly and figure out what chokepoints
-there are; what questions need to be answered and what things need to be made.
+In that time I've done a bit of everything; at first just plain HTML with a lot of <table>s, then a dash of CSS; some PHP, MySQL, later adding javascript, learning Java, and C# before specializing in what I discovered I like most: frontend development.
 
-If a solution exists or is suggested, I'll generally be able to point out
-whether it is possible, solves the problem and where the complexities will
-arise.
+Ive worked on small projects, big projects, large team, small team solo; websites, portals, applications, browser extensions, games, concepts, animations, VR, 2D, 3D, etc. All in the browser of course.
 
-When working on a larger problem, I can easily divide it up into smaller
-parts that can be tackled separately. If different problems have overlap
-that can benefit from a shared solution, I tend to find that overlap and
-conceptualize a scalable solution.
+I hope to share some of niftier examples of this here.
 
-If there are steps in an established process that can be optimized, I will
-find those steps; make a case for optimizing them and implement improvements.
+---
 
-<span class="material-symbols-outlined">
-emoji_objects
-</span>
-<span class="material-symbols-outlined">
-settings_suggest
-</span>
+Modern frontend frameworks:
+[React, Angular, Vue, Solid, Vanilla]
+Over the past years I've worked on mid to large projects in with React, Angular, Vue and Vanilla. I've generally used VueJS for personal projects, but I've recently dove into SolidJS- which has been very refreshing.
 
-* Creative
-As an engineer, I don't like repeating a manual task a hundred times; I'd
-much rather automate that process. Creative solutions however does more than
-save time, it also reduces the risk of human error and generally makes for a
-happier developer or colleague.
+Serverside rendering etc:
+[SSR, ISR, Pre-render, SPA, MPA, Next, Nuxt, SolidStart]
+Over the past years I've worked and experimented with most of all the different rendering technologies available in modern frontends. However, many of the projects I work on also don't really need it or benefit from it, and conventional single-page-applications still very much have their place.
 
-However for me, creativity is much more than a tool towards reliability or
-productivity. I also quite enjoy doing less 'useful' things like coding
-challenges and experimental things.
+Styling:
+[CSS, SCSS, CSS Modules, CSS-in-JS, Tailwind, Styled Components, SolidStyled]
+Despite all the advancements in frontend over the past years, our CSS tools have remained fairly stable. My favorite setups in this area at the moment are SCSS in VueJS single-file-components, or SolidStyled.
 
-That mighty not always be immediately useful; but it educates, it inspires,
-it shares passion and it helps discover solutions that might later actually
-be useful.
+Backend/Content:
+[Rest, GraphQL, Groq, Firebase, Sanity, IndexedDB, SQL]
+Where does content come from? Traditionally probably an SQL server somewhere- either rendered directly through Java, C#, PHP or served via REST. These days things are more flexible, content-structures have become more flexible with headless content systems and getting that data has improved with tools like GraphQL, Groq and tRPC.
 
-construction
-* Versatile
-I have been in software developmenmt a long time; I've been doing it at some
-level since I was about 8 years old. I'll go a bit more in depth on that under
-history, but suffice it to say- I've been exposed to a lot of concepts and
-programming languages in that time.
+Testing:
+[End-to-end, unit testing, cypress, playwright, mocha, jasmine]
+I have experience with most different types of testing, but I generally prefer end-to-end testing via tools like Cypress or Playwright- as this very quickly and effectively highlights integration issues; without having to write tests that completely lock the application down. Of course, unit tests also have their place- though I often find them more useful to ensure code curently works than to ensure it doesn't break in the future.
 
-Though I am currently most versed in frontend development, among other things I
-have at some point dabbled in backend development, databases, 3D rendering,
-desktop applications, native, mobile apps, assembly/embedded software, machine
-learning, browser extensions, build tools... The list could go on.
+Build:
+[Vite, Rollup, Webpack, Grunt, Gulp]
+I have experience with most modern build tools out there, though I admit to not having played around with turbopack; and admit I never liked Webpack very much.
 
-Even if narrowing that scope though, I have experience with React, VueJS,
-Angular, SolidJS, Polymer, jQuery and of course vanilla.
-
-Granted, software development is a big place; there's probably things in your
-stack that I haven't used before. All of the tools and technologies that I have
-worked with before help me learn new things quickly.
-
-* Educator
-Not only do I still really enjoy learning new things, I also very much enjoy
-taking the time to explain topics to other developers. I also tend to share my
-excitement and passion about the topics I explain, which helps to also keep
-the audience engaged.
-
-Beyond that, perhaps the most important aspects of teaching are understanding
-and patience. I generally have a good intuition for which aspects of a topic
-are, and are not yet properly understood, which elps to explain those areas
-more thoroughly.
-
-Finally, I am patient in my explanation and because I enjoy teaching and have
-a good understanding of what the difficulties of a topic may be- I also come
-across as less intimidating, someone who junior developers feel they can ask
-a question and won't judge them.
-
-# Tech
-
-typescript, javascript
-cypress, playwright, jest, jasmine, etc
-next, nuxt, solid start, ssr, isr
-nodejs, express,
-canvas, svg,
-react, angular, vuejs, solid
-webpack, vite, gulp, grunt
-sass, scss, css, css modules, styled components
-mssql, mysql, firebase, headless, rest, graphql, groq, 
-php, java, c#, 
-
-# History
-
+Misc
+Websockets, svg, canvas, Node, Express
+typescript, javascript, php, java, c#

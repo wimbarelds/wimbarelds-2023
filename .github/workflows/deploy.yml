@@ -16,12 +16,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Goto website directory
-      run: cd website
     - name: Install Packages
-      run: npm ci
+      run: |
+        cd website
+        npm ci
     - name: Deploy to GH Pages
       run: |
+        cd website
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         npm run build
         npx gh-pages -d dist/public -b githubpages -f -u "github-actions-bot <support+actions@github.com>"

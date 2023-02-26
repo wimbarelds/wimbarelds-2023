@@ -16,6 +16,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Goto website directory
+      run: cd website
     - name: Install Packages
       run: npm ci
     - name: Deploy to GH Pages

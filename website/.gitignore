@@ -1,0 +1,21 @@
+dist
+.solid
+.output
+
+# dependencies
+/node_modules
+/coverage
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Typescript
+*.tsbuildinfo

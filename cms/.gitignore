@@ -1,0 +1,28 @@
+dist
+
+# studio
+/sanity-dist
+.sanity
+/logs
+*.log
+
+# dependencies
+/node_modules
+/coverage
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+
+# Temp
+gitignore
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Typescript
+*.tsbuildinfo

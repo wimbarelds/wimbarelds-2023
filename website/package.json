@@ -1,42 +1,33 @@
 {
-  "name": "wimbarelds2023",
+  "name": "wimbarelds2023-www",
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
-    "start": "npx http-server ./dist/public -p 3000 -a localhost -g -c-1",
-    "sanity:dev": "sanity dev",
-    "sanity:deploy": "rm -rf .sanity/dist && sanity deploy .sanity/dist -y"
+    "start": "npx http-server ./dist/public -p 3000 -a localhost -g -c-1"
   },
   "type": "module",
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^2.0.1",
     "esbuild": "^0.17.10",
     "eslint": "^8.35.0",
     "gh-pages": "^5.0.0",
     "node-fetch": "^3.3.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
-    "replace-in-files": "^3.0.0",
-    "sass": "^1.58.3",
     "typescript": "^4.9.5",
     "vite": "^3.2.5"
   },
   "dependencies": {
     "@portabletext/to-html": "^2.0.0",
-    "@sanity/icons": "^2.2.2",
-    "@sanity/image-url": "^1.0.2",
-    "@sanity/vision": "^3.5.0",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.7.0",
+    "@sanity/image-url": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "sanity": "^3.5.0",
     "solid-js": "^1.6.11",
     "solid-start": "^0.2.22",
     "solid-start-static": "^0.2.22",
-    "solid-styled": "^0.8.0",
-    "styled-components": "^5.3.6"
+    "solid-styled": "^0.8.0"
   },
   "engines": {
     "node": ">=16.8"

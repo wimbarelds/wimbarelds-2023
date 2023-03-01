@@ -10,11 +10,11 @@ export const apiVersion = '2021-08-31';
 
 const urlFor = (query: string): string => {
   const baseUrl = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}`;
-  const searchParams = new URLSearchParams({query});
+  const searchParams = new URLSearchParams({ query });
   return `${baseUrl}?${searchParams.toString()}`;
 };
 
-export const groq = (strings: TemplateStringsArray, ...inserts: any[]): string => {
+export const groq = (strings: TemplateStringsArray, ...inserts: unknown[]): string => {
   let result = strings[0];
   for (let i = 1; i < strings.length; i++) {
     result += inserts[i - 1] + strings[i];

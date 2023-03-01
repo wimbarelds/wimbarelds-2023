@@ -1,20 +1,18 @@
-import { createMemo, createResource, For, JSX } from "solid-js";
-import { useRouteData } from "solid-start";
-import { getHomeData } from "~/sanity/query/home";
+import { createMemo, createResource, For, JSX } from 'solid-js';
+import { useRouteData } from 'solid-start';
+import { getHomeData } from '~/sanity/query/home';
 
-import imageUrlBuilder from '@sanity/image-url'
-import {toHTML} from '@portabletext/to-html';
-import { dataset, projectId } from "~/sanity/client";
-import { ImageAsset } from "sanity";
-
-import styles from './index.module.scss'
+import imageUrlBuilder from '@sanity/image-url';
+import { toHTML } from '@portabletext/to-html';
+import { dataset, projectId } from '~/sanity/client';
+import { ImageAsset } from 'sanity';
 
 const builder = imageUrlBuilder({
   clientConfig: {
     dataset,
     apiHost: 'https://cdn.sanity.io',
     projectId,
-  }
+  },
 });
 
 const urlFor = (asset: ImageAsset) => builder.image(asset);
@@ -44,14 +42,14 @@ interface HomeResolved {
   technologies: {
     title: string;
     items: string[];
-  }
+  };
 }
 
 export function routeData() {
   const [data] = createResource(async () => {
     return await getHomeData();
   });
- 
+
   return { data };
 }
 
@@ -60,7 +58,7 @@ export default function Home() {
   const home = createMemo((): HomeResolved | null => {
     const resolved = data();
     if (!resolved) return null;
-    const {title, hero, about, traits, technologies} = resolved;
+    const { title, hero, about, traits, technologies } = resolved;
     const result: HomeResolved = {
       title,
       hero: {
@@ -77,13 +75,11 @@ export default function Home() {
       about: <div innerHTML={toHTML(about)} />,
       traits: {
         title: traits.title,
-        items: traits.items.map(trait => ({
+        items: traits.items.map((trait) => ({
           ...trait,
-          symbol: (
-            <span class="material-symbols-outlined">{trait.symbol}</span>
-          ),
+          symbol: <span class="material-symbols-outlined">{trait.symbol}</span>,
           text: <div innerHTML={toHTML(trait.text)} />,
-        }))
+        })),
       },
       technologies,
     };
@@ -91,42 +87,38 @@ export default function Home() {
   });
   return (
     <main>
-      <section class={`${styles.section} ${styles.hero}`}>
-        <div class={styles.img}>
+      <section class={`section hero`}>
+        <div class='img'>
           <img src={home()?.hero.picture ?? ''} alt="" />
         </div>
-        <div class={styles.me}>
+        <div class='me'>
           <h1>{home()?.hero.me.title}</h1>
           {home()?.hero.me.text}
         </div>
-        <div class={styles.website}>
+        <div class='website'>
           <h1>{home()?.hero.website.title}</h1>
           {home()?.hero.website.text}
         </div>
       </section>
-      <section class={`${styles.section} ${styles.about}`}>
-        {home()?.about}
-      </section>
-      <section class={`${styles.section} ${styles.traits}`}>
+      <section class={`section about`}>{home()?.about}</section>
+      <section class={`section traits`}>
         <h2>{home()?.traits.title}</h2>
-        <div class={styles.traits_items}>
+        <div class='traits_items'>
           <For each={home()?.traits.items}>
             {(trait) => (
-              <div class={styles.trait}>
+              <div class='trait'>
                 {trait.symbol}
                 <h3>{trait.title}</h3>
                 {trait.text}
               </div>
             )}
           </For>
-          </div>
+        </div>
       </section>
-      <section class={`${styles.section} ${styles.technologies}`}>
+      <section class={`section technologies`}>
         <h2>{home()?.technologies.title}</h2>
-        <div class={styles.technologies_list}>
-          <For each={home()?.technologies.items}>
-            {tech => <span class={styles.technologies_item}>{tech}</span>}
-          </For>
+        <div class='technologies_list'>
+          <For each={home()?.technologies.items}>{(tech) => <span class={'technologies_item'}>{tech}</span>}</For>
         </div>
       </section>
     </main>

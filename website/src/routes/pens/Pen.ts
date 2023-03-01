@@ -1,4 +1,4 @@
-import { PortableTextBlock, Image } from "sanity";
+import { PortableTextBlock, Image } from 'sanity';
 
 export interface PenInterface {
   title: string;
@@ -6,7 +6,7 @@ export interface PenInterface {
   slug: string;
   thumbnail: Image;
   content: Array<
-    | {_key: string, codepenId: string}
-    | {_key: string, _type: 'portableText', blocks: PortableTextBlock[]}
+    | { _key: string; codepenId: string }
+    | { _key: string; _type: 'portableText'; blocks: PortableTextBlock[] }
   >;
 }

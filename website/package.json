@@ -3,13 +3,24 @@
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
-    "start": "npx http-server ./dist/public -p 3000 -a localhost -g -c-1"
+    "start": "npx http-server ./dist/public -p 3000 -a localhost -g -c-1",
+    "lint:fix": "eslint --config=eslint.config.js src --fix",
+    "lint": "eslint --config=eslint.config.js src",
+    "prettier": "prettier src"
   },
   "type": "module",
   "devDependencies": {
+    "@types/babel__core": "^7.20.0",
+    "@types/debug": "^4.1.7",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
     "esbuild": "^0.17.10",
     "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-solid": "^0.10.0",
     "gh-pages": "^5.0.0",
+    "globals": "^13.20.0",
     "node-fetch": "^3.3.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
@@ -17,13 +28,15 @@
     "vite": "^3.2.5"
   },
   "dependencies": {
+    "@eslint/js": "^8.35.0",
     "@portabletext/to-html": "^2.0.0",
+    "@sanity/image-url": "^1.0.2",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.7.0",
-    "@sanity/image-url": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "sanity": "^3.5.1",
     "solid-js": "^1.6.11",
     "solid-start": "^0.2.22",
     "solid-start-static": "^0.2.22",

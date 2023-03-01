@@ -1,3 +1,3 @@
 export function Experience() {
-  return <>Experience</>
+  return <>Experience</>;
 }

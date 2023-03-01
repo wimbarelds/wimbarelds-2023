@@ -1,16 +1,16 @@
-import { PenInterface } from "~/routes/pens/Pen";
-import { dataset, projectId } from "~/sanity/client";
+import { PenInterface } from '~/routes/pens/Pen';
+import { dataset, projectId } from '~/sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
-import { Image } from "sanity";
-import { A } from "solid-start";
-import { css } from "solid-styled";
+import { Image } from 'sanity';
+import { A } from 'solid-start';
+import { css } from 'solid-styled';
 
 const builder = imageUrlBuilder({
   clientConfig: {
     dataset,
     apiHost: 'https://cdn.sanity.io',
     projectId,
-  }
+  },
 });
 const urlFor = (asset: Image) => builder.image(asset);
 
@@ -26,13 +26,13 @@ export default function PenTile(props: PenTileInterface) {
       flex-direction: column;
       background-color: #111;
       flex: 1;
-      color: #FFF;
+      color: #fff;
       text-decoration: none;
       gap: 5px;
       padding: 10px;
     }
     h3 {
-      color: #FF0;
+      color: #ff0;
     }
     p {
       display: flex;
@@ -41,7 +41,7 @@ export default function PenTile(props: PenTileInterface) {
       flex: 1;
       text-align: center;
     }
-  `
+  `;
   return (
     <A href={`/pens/${props.pen.slug}`} use:solid-styled>
       <h3>{props.pen.title}</h3>

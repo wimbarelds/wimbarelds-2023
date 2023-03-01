@@ -1,9 +1,9 @@
-import { createResource, For, JSX } from "solid-js";
-import { Title, useRouteData } from "solid-start";
-import { groq, sanityClient } from "~/sanity/client";
-import { PenInterface } from "./Pen";
-import PenTile from "~/components/Common/PenTile";
-import { css } from "solid-styled";
+import { createResource, For, JSX } from 'solid-js';
+import { Title, useRouteData } from 'solid-start';
+import { groq, sanityClient } from '~/sanity/client';
+import { PenInterface } from './Pen';
+import PenTile from '~/components/Common/PenTile';
+import { css } from 'solid-styled';
 
 const query = groq`*
   [_type == "pen"]
@@ -24,7 +24,7 @@ export function routeData() {
   const [pens] = createResource(async () => {
     return await getOverviewData();
   });
- 
+
   return { pens };
 }
 
@@ -47,7 +47,11 @@ export default function PensOverview(): JSX.Element {
       <h2>Notable codepens</h2>
       <ul class="pens">
         <For each={pens()}>
-          {(pen) => <li><PenTile pen={pen} /></li>}
+          {(pen) => (
+            <li>
+              <PenTile pen={pen} />
+            </li>
+          )}
         </For>
       </ul>
     </>

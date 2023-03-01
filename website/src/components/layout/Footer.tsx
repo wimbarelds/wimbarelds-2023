@@ -1,7 +1,5 @@
-import { type JSXElement } from "solid-js";
+import { type JSXElement } from 'solid-js';
 
 export default function Footer(): JSXElement {
-  return (
-    <></>
-  )
+  return <></>;
 }

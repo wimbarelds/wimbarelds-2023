@@ -11,12 +11,11 @@ export default function Codepen(props: CodepenInterface) {
     <>
       <iframe
         height={props.height ?? 600}
-        style={{width: '100%'}}
+        style={{ width: '100%', border: '0' }}
         title={props.title ?? 'Codepen Embed'}
         src={`https://codepen.io/wimbarelds/embed/${props.id}?default-tab=result`}
         allowfullscreen={true}
-        frameborder="0"
-      />    
+      />
     </>
   );
 }

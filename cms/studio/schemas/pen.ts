@@ -10,6 +10,11 @@ export const penSchema = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'created',
+      title: 'Created',
+      type: 'datetime'
+    }),
+    defineField({
       name: 'slug',
       title: 'URL Slug',
       type: 'slug',

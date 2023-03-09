@@ -7,7 +7,7 @@ import { css } from 'solid-styled';
 
 const query = groq`*
   [_type == "pen"]
-  |order(_createdAt)
+  |order(coalesce(created, _createdAt) desc)
   [0...12]
   {
     title,

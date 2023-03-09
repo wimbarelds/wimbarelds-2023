@@ -23,19 +23,32 @@ export function Splash(props: { section: PageSection }) {
   const { prefix, name, heading, scroller, body } = parseSection(props.section);
 
   css`
-    .splash > p {
-      color: #f90;
+    .splash {
+      max-width: 600px;
+    }
+    .prefix {
+      color: var(--clr-mono-300);
+    }
+    h2, h3 {
+      line-height: 1.05em;
     }
     h2 {
       font-size: 64px;
-      color: #999;
+      color: var(--clr-mono-500);
     }
     h2 span:first-child {
       color: #ccc;
     }
     h3 {
       display: flex;
-      color: #f90;
+      align-items: flex-end;
+      color: var(--clr-p-300);
+      font-size: 40px;
+    }
+    .body {
+      margin: 1em 0;
+      max-width: 24em;
+      color: var(--clr-p-100);
     }
     h3 ul {
       position: relative;
@@ -44,41 +57,42 @@ export function Splash(props: { section: PageSection }) {
       padding: 0;
       margin: 0;
       overflow: hidden;
+      margin-left: .25em;
     }
     h3 li {
       grid-column: 1;
       grid-row: 1;
       animation: slide 10s calc(var(--i) * -2.5s) infinite ease-in-out;
-      color: #ff0;
+      color: var(--clr-a-200);
+      font-weight: 700;
+      text-transform: lowercase;
+      text-decoration: underline;
     }
     h3:hover li {
       animation-play-state: paused;
     }
-    h3 li::before {
-      content: '\\00a0';
-    }
     @keyframes slide {
       0% {
-        transform: translateY(-100%);
+        transform: translateX(-100%);
       }
       3% {
-        transform: translateY(0%);
+        transform: translateX(0%);
       }
       25% {
-        transform: translateY(0%);
+        transform: translateX(0%);
       }
       28% {
-        transform: translateY(100%);
+        transform: translateX(100%);
       }
       100% {
-        transform: translateY(100%);
+        transform: translateX(100%);
       }
     }
   `;
 
   return (
     <div class="splash">
-      <p>{prefix}</p>
+      <p class="prefix">{prefix}</p>
       <h2>
         {name.text.split(' ').map((part) => (
           <span>{part}</span>

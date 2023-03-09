@@ -1,5 +1,6 @@
 import { createEffect, createResource, createSignal, For, Match, Switch } from 'solid-js';
 import { Title, useRouteData } from 'solid-start';
+import { css } from 'solid-styled';
 import { About } from '~/components/Home/About';
 import { Experience } from '~/components/Home/Experience';
 import { Splash } from '~/components/Home/Splash';
@@ -18,6 +19,7 @@ export default function Home() {
   createEffect(() => {
     console.log(data());
   });
+
   return (
     <>
       {!data() ? (
@@ -29,17 +31,17 @@ export default function Home() {
             {(section) => (
               <Switch>
                 <Match when={section.id === 'splash'}>
-                  <section>
+                  <section class="page-section">
                     <Splash section={section} />
                   </section>
                 </Match>
                 <Match when={section.id === 'about'}>
-                  <section>
+                  <section class="page-section">
                     <About />
                   </section>
                 </Match>
                 <Match when={section.id === 'experience'}>
-                  <section>
+                  <section class="page-section">
                     <Experience />
                   </section>
                 </Match>

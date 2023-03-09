@@ -41,10 +41,11 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, sans-serif;
   background-color: var(--clr-mono-800);
-  color: #fff;
-  margin: 0;
+  color: var(--clr-p-50);
+  margin: 1em;
+  font-size: 14px;
 }
 
 *,
@@ -67,8 +68,6 @@ body {
 .page-container {
   margin: 0 auto;
   max-width: min(100%, 900px);
-  background-color: var(--clr-mono-900);
-  min-height: 100%;
 }
 
 .no-list {
@@ -84,4 +83,27 @@ h4,
 h5,
 p {
   margin: 0;
+}
+
+.page-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pens-overview {
+  margin-top: 3rem;
+}
+
+ul.pens {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+ul.pens>li {
+  display: flex;
+  flex-direction: column;
 }

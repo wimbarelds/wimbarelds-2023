@@ -26,26 +26,39 @@ export default function PenTile(props: PenTileInterface) {
       flex-direction: column;
       background-color: #111;
       flex: 1;
-      color: #fff;
+      color: var(--clr-p-50);
       text-decoration: none;
       gap: 5px;
       padding: 10px;
+      transition: all 0.2s ease-in-out;
+      border-radius: .5em;
+    }
+    a:hover {
+      outline: solid var(--clr-p-400) 2px;
+      outline-offset: -2px;
     }
     h3 {
-      color: #ff0;
+      color: var(--clr-a-200);
+      font-weight: 200;
     }
     p {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
       flex: 1;
-      text-align: center;
+      text-align: left;
+      color: var(--clr-mono-400);
+      font-size: 80%;
+    }
+    img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
     }
   `;
   return (
     <A href={`/pens/${props.pen.slug}`} use:solid-styled>
       <h3>{props.pen.title}</h3>
-      <img src={urlFor(props.pen.thumbnail).size(300, 200).fit('max').toString()} alt="" />
+      <img src={urlFor(props.pen.thumbnail).size(200, 120).fit('max').toString()} alt="" />
       <p>{props.pen.description}</p>
     </A>
   );

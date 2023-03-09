@@ -30,22 +30,11 @@ export function routeData() {
 
 export default function PensOverview(): JSX.Element {
   const { pens } = useRouteData<typeof routeData>();
-  css`
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    li {
-      display: flex;
-      flex-direction: column;
-    }
-  `;
   return (
-    <>
+    <div class="pens-overview">
       <Title>Codepens</Title>
       <h2>Notable codepens</h2>
-      <ul class="pens">
+      <ul class="pens no-list">
         <For each={pens()}>
           {(pen) => (
             <li>
@@ -54,6 +43,6 @@ export default function PensOverview(): JSX.Element {
           )}
         </For>
       </ul>
-    </>
+    </div>
   );
 }

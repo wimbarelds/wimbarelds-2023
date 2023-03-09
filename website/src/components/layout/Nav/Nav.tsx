@@ -10,22 +10,22 @@ export default function Navigation(): JSXElement {
       </h2>
       <ul class={`no-list`}>
         <li>
-          <A activeClass='active' end={true} href="/">
+          <A activeClass="active" end={true} href="/">
             Who am I?
           </A>
         </li>
         <li>
-          <A activeClass='active' href="/articles">
+          <A activeClass="active" href="/articles">
             Articles
           </A>
         </li>
         <li>
-          <A activeClass='active' href="/pens">
+          <A activeClass="active" href="/pens">
             Pens
           </A>
         </li>
         <li>
-          <A activeClass='active' href="/home">
+          <A activeClass="active" href="/home">
             Home
           </A>
         </li>

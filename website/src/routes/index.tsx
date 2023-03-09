@@ -88,14 +88,14 @@ export default function Home() {
   return (
     <main>
       <section class={`section hero`}>
-        <div class='img'>
+        <div class="img">
           <img src={home()?.hero.picture ?? ''} alt="" />
         </div>
-        <div class='me'>
+        <div class="me">
           <h1>{home()?.hero.me.title}</h1>
           {home()?.hero.me.text}
         </div>
-        <div class='website'>
+        <div class="website">
           <h1>{home()?.hero.website.title}</h1>
           {home()?.hero.website.text}
         </div>
@@ -103,10 +103,10 @@ export default function Home() {
       <section class={`section about`}>{home()?.about}</section>
       <section class={`section traits`}>
         <h2>{home()?.traits.title}</h2>
-        <div class='traits_items'>
+        <div class="traits_items">
           <For each={home()?.traits.items}>
             {(trait) => (
-              <div class='trait'>
+              <div class="trait">
                 {trait.symbol}
                 <h3>{trait.title}</h3>
                 {trait.text}
@@ -117,8 +117,10 @@ export default function Home() {
       </section>
       <section class={`section technologies`}>
         <h2>{home()?.technologies.title}</h2>
-        <div class='technologies_list'>
-          <For each={home()?.technologies.items}>{(tech) => <span class={'technologies_item'}>{tech}</span>}</For>
+        <div class="technologies_list">
+          <For each={home()?.technologies.items}>
+            {(tech) => <span class={'technologies_item'}>{tech}</span>}
+          </For>
         </div>
       </section>
     </main>

@@ -6,7 +6,9 @@
     "start": "npx http-server ./dist/public -p 3000 -a localhost -g -c-1",
     "lint:fix": "eslint --config=eslint.config.js src --fix",
     "lint": "eslint --config=eslint.config.js src",
-    "prettier": "prettier src"
+    "prettier": "prettier src",
+    "prettier:fix": "prettier src -w",
+    "tsc": "tsc --noEmit"
   },
   "type": "module",
   "devDependencies": {
@@ -25,7 +27,8 @@
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
-    "vite": "^3.2.5"
+    "vite": "^4.1.4",
+    "vite-plugin-solid-styled": "^0.8.1"
   },
   "dependencies": {
     "@eslint/js": "^8.35.0",
@@ -38,9 +41,9 @@
     "react-is": "^18.2.0",
     "sanity": "^3.5.1",
     "solid-js": "^1.6.11",
-    "solid-start": "^0.2.22",
-    "solid-start-static": "^0.2.22",
-    "solid-styled": "^0.8.0"
+    "solid-start": "^0.2.23",
+    "solid-start-static": "^0.2.23",
+    "solid-styled": "^0.8.1"
   },
   "engines": {
     "node": ">=16.8"

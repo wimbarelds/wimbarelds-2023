@@ -1,5 +1,6 @@
 import solid from "solid-start/vite";
 import { defineConfig, UserConfig, UserConfigFn } from "vite";
+import solidStyled from 'vite-plugin-solid-styled';
 import { groq, sanityClient } from "./src/sanity/client";
 
 import dns from 'dns'
@@ -17,19 +18,24 @@ const getPens = async (): Promise<string[]> => {
 const userConfig: UserConfigFn = async (env): Promise<UserConfig> => {
   const pens: string[] = env.ssrBuild ? await getPens() : [];
   return {
-    plugins: [solid({
-      solid: { hydratable: true },
-      babel: (_source: string, id: string) => ({
-        plugins: [["solid-styled/babel", { source: id }]],
+    plugins: [
+      solid({
+        solid: { hydratable: true },
+        prerenderRoutes: [
+          '/articles/',
+          '/articles/test',
+          '/pens/',
+          ...pens,
+        ],
+        adapter: 'solid-start-static',
       }),
-      prerenderRoutes: [
-        '/articles/',
-        '/articles/test',
-        '/pens/',
-        ...pens,
-      ],
-      adapter: 'solid-start-static',
-    })],
+      solidStyled({
+        filter: {
+          include: 'src/**/*.tsx',
+          exclude: 'node_modules/**/*.{ts,js}',
+        }
+      })
+    ],
   }
 }
 

@@ -12,7 +12,9 @@ const parseSection = (section: PageSection) => {
     (module) => module._type === 'heading' && module.level === 3,
   ) as HeadingModule;
   const scroller = section.section_modules.find((module) => module._type === 'list') as ListModule;
-  const body = section.section_modules.find((module) => module._type === 'module_richtext') as PortableTextModule;
+  const body = section.section_modules.find(
+    (module) => module._type === 'module_richtext',
+  ) as PortableTextModule;
 
   return { prefix, name, heading, scroller, body: <div innerHTML={toHTML(body.blocks)} /> };
 };
@@ -85,7 +87,9 @@ export function Splash(props: { section: PageSection }) {
       <h3>
         {heading.text}
         <ul>
-          <For each={scroller.items}>{(item, index) => <li style={{ '--i': index() }}>{item}</li>}</For>
+          <For each={scroller.items}>
+            {(item, index) => <li style={{ '--i': index() }}>{item}</li>}
+          </For>
         </ul>
       </h3>
       <div class="body">{body}</div>

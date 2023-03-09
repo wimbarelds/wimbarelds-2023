@@ -16,7 +16,7 @@ const getPens = async (): Promise<string[]> => {
 };
 
 const userConfig: UserConfigFn = async (env): Promise<UserConfig> => {
-  const pens: string[] = env.ssrBuild ? await getPens() : [];
+  const pens: string[] = env.mode === 'production' ? await getPens() : [];
   return {
     plugins: [
       solid({

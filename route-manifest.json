@@ -1,0 +1,97 @@
+{
+  "/*404": [
+    {
+      "type": "script",
+      "href": "/assets/_...404_-cdf74841.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/entry-client-5e482cd2.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/entry-client-22369635.css"
+    }
+  ],
+  "/articles/(overview)": [
+    {
+      "type": "script",
+      "href": "/assets/(overview)-181acc4a.js"
+    }
+  ],
+  "/articles/:slug": [
+    {
+      "type": "script",
+      "href": "/assets/_slug_-fa6ef8e9.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/entry-client-5e482cd2.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/entry-client-22369635.css"
+    }
+  ],
+  "/": [
+    {
+      "type": "script",
+      "href": "/assets/index-fb9e9087.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/entry-client-5e482cd2.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/entry-client-22369635.css"
+    },
+    {
+      "type": "script",
+      "href": "/assets/pt-to-html.esm-f63ae793.js"
+    }
+  ],
+  "/pens/(overview)": [
+    {
+      "type": "script",
+      "href": "/assets/(overview)-461f0be7.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/entry-client-5e482cd2.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/entry-client-22369635.css"
+    }
+  ],
+  "/pens/:pen": [
+    {
+      "type": "script",
+      "href": "/assets/_pen_-c2b15d5f.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/entry-client-5e482cd2.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/entry-client-22369635.css"
+    },
+    {
+      "type": "script",
+      "href": "/assets/pt-to-html.esm-f63ae793.js"
+    }
+  ],
+  "entry-client": [
+    {
+      "type": "script",
+      "href": "/assets/entry-client-5e482cd2.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/entry-client-22369635.css"
+    }
+  ],
+  "index.html": []
+}

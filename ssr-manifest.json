@@ -1,0 +1,119 @@
+{
+  "\u0000/home/runner/work/wimbarelds-2023/wimbarelds-2023/website/node_modules/@sanity/image-url/lib/browser/image-url.umd.js?commonjs-module": [
+    "/assets/(overview)-461f0be7.js"
+  ],
+  "\u0000commonjsHelpers.js": [
+    "/assets/(overview)-461f0be7.js"
+  ],
+  "\u0000vite/preload-helper": [
+  ],
+  "node_modules/@portabletext/to-html/dist/pt-to-html.esm.js": [
+    "/assets/pt-to-html.esm-f63ae793.js"
+  ],
+  "node_modules/@portabletext/toolkit/dist/portable-text-toolkit.esm.js": [
+    "/assets/pt-to-html.esm-f63ae793.js"
+  ],
+  "node_modules/@sanity/image-url/lib/browser/image-url.umd.js": [
+    "/assets/(overview)-461f0be7.js"
+  ],
+  "node_modules/@solidjs/meta/dist/index.jsx": [
+  ],
+  "node_modules/@solidjs/router/dist/components.jsx": [
+  ],
+  "node_modules/@solidjs/router/dist/integration.js": [
+  ],
+  "node_modules/@solidjs/router/dist/lifecycle.js": [
+  ],
+  "node_modules/@solidjs/router/dist/routing.js": [
+  ],
+  "node_modules/@solidjs/router/dist/utils.js": [
+  ],
+  "node_modules/solid-js/dist/solid.js": [
+  ],
+  "node_modules/solid-js/store/dist/store.js": [
+  ],
+  "node_modules/solid-js/web/dist/web.js": [
+  ],
+  "node_modules/solid-start/data/createRouteData.tsx": [
+  ],
+  "node_modules/solid-start/entry-client/StartClient.tsx": [
+  ],
+  "node_modules/solid-start/entry-client/mount.tsx": [
+  ],
+  "node_modules/solid-start/error-boundary/ErrorBoundary.tsx": [
+  ],
+  "node_modules/solid-start/root/Document.tsx": [
+  ],
+  "node_modules/solid-start/root/FileRoutes.tsx": [
+  ],
+  "node_modules/solid-start/root/Scripts.tsx": [
+  ],
+  "node_modules/solid-start/router.tsx": [
+  ],
+  "node_modules/solid-start/server/ServerContext.tsx": [
+  ],
+  "node_modules/solid-start/server/components/HttpStatusCode.tsx": [
+    "/assets/_...404_-cdf74841.js"
+  ],
+  "node_modules/solid-start/server/responses.ts": [
+  ],
+  "node_modules/solid-start/server/types.tsx": [
+  ],
+  "node_modules/solid-styled/dist/esm/production/index.mjs": [
+  ],
+  "src/components/Common/Codepen.tsx": [
+    "/assets/_pen_-c2b15d5f.js"
+  ],
+  "src/components/Common/PenTile.tsx": [
+    "/assets/(overview)-461f0be7.js"
+  ],
+  "src/components/Home/About.tsx": [
+    "/assets/index-fb9e9087.js"
+  ],
+  "src/components/Home/Experience.tsx": [
+    "/assets/index-fb9e9087.js"
+  ],
+  "src/components/Home/Splash.tsx": [
+    "/assets/index-fb9e9087.js"
+  ],
+  "src/components/layout/Footer.tsx": [
+  ],
+  "src/components/layout/Header/Header.tsx": [
+  ],
+  "src/components/layout/Nav/Nav.tsx": [
+  ],
+  "src/entry-client.tsx": [
+  ],
+  "src/root.css": [
+  ],
+  "src/root.tsx": [
+  ],
+  "src/routes/[...404].tsx": [
+    "/assets/_...404_-cdf74841.js"
+  ],
+  "src/routes/articles/(overview).tsx": [
+    "/assets/(overview)-181acc4a.js"
+  ],
+  "src/routes/articles/[slug].tsx": [
+    "/assets/_slug_-fa6ef8e9.js"
+  ],
+  "src/routes/index.tsx": [
+    "/assets/index-fb9e9087.js"
+  ],
+  "src/routes/index.tsx?data": [
+  ],
+  "src/routes/pens/(overview).tsx": [
+    "/assets/(overview)-461f0be7.js"
+  ],
+  "src/routes/pens/(overview).tsx?data": [
+  ],
+  "src/routes/pens/[pen].tsx": [
+    "/assets/_pen_-c2b15d5f.js"
+  ],
+  "src/routes/pens/[pen].tsx?data": [
+  ],
+  "src/sanity/client.ts": [
+  ],
+  "src/sanity/query/home.ts": [
+  ]
+}
